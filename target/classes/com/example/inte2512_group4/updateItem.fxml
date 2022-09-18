@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inte2512_group4.Controller.ItemController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@image/coverNoID.png" />
+         </image>
+      </ImageView>
+      <Pane layoutY="180.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+             <HBox prefHeight="61.0" prefWidth="600.0">
+                 <children>
+                     <Label fx:id="titleLabel" alignment="CENTER" prefHeight="43.0" prefWidth="618.0" text="Edit Item">
+                         <font>
+                             <Font name="Bookman Old Style Bold" size="20.0" />
+                         </font>
+                     </Label>
+                 </children></HBox>
+             <HBox layoutX="35.0" layoutY="177.0" prefHeight="26.0" prefWidth="212.0">
+                 <children>
+                       <Label prefHeight="35.0" prefWidth="71.0" text="Title:" />
+                     <TextField fx:id="title" prefHeight="26.0" prefWidth="170.0" />
+                 </children></HBox>
+             <HBox layoutX="35.0" layoutY="230.0" prefHeight="26.0" prefWidth="212.0" spacing="30.0">
+                 <children>
+                     <Label prefHeight="26.0" prefWidth="108.0" text="Rental type:" />
+                  <ChoiceBox fx:id="rentTypeField" prefWidth="150.0" />
+                 </children></HBox>
+             <HBox layoutX="349.0" layoutY="124.0" prefHeight="26.0" prefWidth="223.0">
+                 <children>
+                     <Label prefHeight="26.0" prefWidth="76.0" text="Loan Type:" />
+                  <ChoiceBox fx:id="loanTypeField" prefWidth="150.0" />
+                 </children>
+             </HBox>
+             <HBox alignment="TOP_RIGHT" layoutX="35.0" layoutY="124.0" prefHeight="25.0" prefWidth="212.0">
+                 <children>
+                     <Label prefHeight="26.0" prefWidth="64.0" text="ID:    " />
+                   <TextField fx:id="itemID" alignment="CENTER" disable="true" editable="false" prefHeight="25.0" prefWidth="170.0" />
+                 </children>
+             </HBox>
+             <HBox layoutX="35.0" layoutY="281.0" prefHeight="25.0" prefWidth="212.0">
+                 <children>
+                     <Label prefHeight="37.0" prefWidth="75.0" text="Genre:" />
+                  <ChoiceBox fx:id="genreChoice" prefWidth="150.0" />
+                 </children>
+             </HBox>
+             <HBox layoutX="349.0" layoutY="178.0" prefHeight="25.0" prefWidth="223.0">
+                 <children>
+                     <Label />
+                     <Label prefHeight="39.0" prefWidth="68.0" text="Quantity:" />
+                     <TextField fx:id="quantity" prefHeight="25.0" prefWidth="154.0" />
+                 </children>
+             </HBox>
+            <HBox alignment="TOP_RIGHT" layoutX="349.0" layoutY="230.0" prefHeight="26.0" prefWidth="223.0">
+               <children>
+                   <Label prefHeight="26.0" prefWidth="115.0" text="Fee:" />
+                   <TextField fx:id="fee" alignment="CENTER" prefHeight="26.0" prefWidth="193.0" />
+               </children>
+            </HBox>
+             <Label layoutX="6.0" layoutY="67.0" text="Item Details:">
+                 <font>
+                     <Font name="Arial Bold" size="18.0" />
+                 </font>
+             </Label>
+            <HBox layoutX="349.0" layoutY="281.0" prefHeight="25.0" prefWidth="223.0">
+               <children>
+                   <Label alignment="CENTER" prefHeight="25.0" prefWidth="73.0" text="Availability:" />
+                  <ChoiceBox fx:id="status" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <Button layoutX="150.0" layoutY="352.0" mnemonicParsing="false" onAction="#onDelete" prefHeight="34.0" prefWidth="107.0" text="Delete" />
+            <Button layoutX="354.0" layoutY="352.0" mnemonicParsing="false" onAction="#updateItemHandler" prefHeight="34.0" prefWidth="107.0" text="Update" />
+            <Label fx:id="updateSuc" layoutX="232.0" layoutY="319.0" text="UPDATED SUCCESSFULLY!" textFill="#0dff00" visible="false" />
+         </children>
+      </Pane>
+      <Button layoutX="5.0" layoutY="185.0" mnemonicParsing="false" onAction="#onBack" prefHeight="15.0" prefWidth="15.0" styleClass="btn" stylesheets="@Styling.css">
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/return.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ImageView fitHeight="150.0" fitWidth="600.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/genie2.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

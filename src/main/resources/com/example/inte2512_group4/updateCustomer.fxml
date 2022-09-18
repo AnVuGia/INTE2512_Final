@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inte2512_group4.Controller.CustomerController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/coverNoID.png" />
+         </image></ImageView>
+      <Pane layoutY="180.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+            <HBox prefHeight="61.0" prefWidth="600.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="618.0" text="Edit Customer">
+                     <font>
+                        <Font name="Bookman Old Style Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children></HBox>
+            <HBox layoutY="167.0" prefHeight="20.0" prefWidth="166.0" />
+            <HBox layoutX="5.0" layoutY="95.0" prefHeight="26.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="53.0" text="Name:" />
+                  <TextField fx:id="name" prefHeight="26.0" prefWidth="153.0" />
+               </children></HBox>
+            <HBox layoutX="5.0" layoutY="131.0" prefHeight="26.0" prefWidth="200.0" spacing="1.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="87.0" text="Phone Number" />
+                  <TextField fx:id="phone" prefHeight="26.0" prefWidth="111.0" />
+               </children></HBox>
+            <HBox layoutX="5.0" layoutY="164.0" prefHeight="26.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="43.0" prefWidth="49.0" text="Address: " />
+                  <TextField fx:id="address" prefHeight="25.0" prefWidth="156.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="5.0" layoutY="200.0" prefHeight="25.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="35.0" text="ID:  " />
+                  <TextField fx:id="id" disable="true" editable="false" layoutX="65.0" prefHeight="25.0" prefWidth="167.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="5.0" layoutY="237.0" prefHeight="25.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="91.0" text="Customer Type:" />
+                  <TextField fx:id="customer_type" disable="true" editable="false" prefHeight="26.0" prefWidth="109.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="5.0" layoutY="279.0" prefHeight="18.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="52.0" prefWidth="62.0" text="Username: " />
+                  <TextField fx:id="user_name" disable="true" editable="false" prefHeight="25.0" prefWidth="139.0" />
+               </children>
+            </HBox>
+            <Label layoutX="5.0" layoutY="320.0" prefHeight="18.0" prefWidth="56.0" text="Password:" />
+            <Label layoutX="6.0" layoutY="55.0" prefHeight="32.0" prefWidth="172.0" text="Customer Details:">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="user_password" editable="false" layoutX="65.0" layoutY="317.0" prefHeight="26.0" prefWidth="139.0" />
+            <Label layoutX="420.0" layoutY="87.0" text="List of Rentals" />
+            <Label fx:id="errorLabel" layoutX="197.0" layoutY="351.0" prefHeight="18.0" prefWidth="200.0" text="INVALID CONDITION TO PROMOTE!" textFill="RED" visible="false" />
+            <ScrollPane fx:id="rentalList" layoutX="357.0" layoutY="111.0" prefHeight="158.0" prefWidth="200.0" />
+            <Label layoutX="357.0" layoutY="279.0" prefHeight="26.0" prefWidth="80.0" text="Return Made: " />
+            <Button fx:id="promoteButton" layoutX="417.0" layoutY="347.0" mnemonicParsing="false" onAction="#Promote" text="Promote" />
+            <Label fx:id="NumOfReturn" layoutX="448.0" layoutY="279.0" prefHeight="26.0" prefWidth="80.0" />
+            <Label fx:id="successLabel" layoutX="220.0" layoutY="351.0" prefHeight="18.0" prefWidth="154.0" text="PROMOTED SUCCESSFULLY!" textFill="LIME" visible="false" />
+            <Label fx:id="updateSuc" layoutX="228.0" layoutY="352.0" text="UPDATED SUCCESSFULLY!" textFill="#00ff11" visible="false" />
+         </children>
+      </Pane>
+      <Button fx:id="updateButton" layoutX="237.0" layoutY="595.0" mnemonicParsing="false" onAction="#updateButtonHandler" prefHeight="32.0" prefWidth="126.0" text="Update" />
+      <Button fx:id="backButton" layoutX="5.0" layoutY="185.0" mnemonicParsing="false" onAction="#onBack" prefHeight="15.0" prefWidth="15.0" styleClass="btn" stylesheets="@Styling.css">
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/return.png" />
+               </image></ImageView>
+         </graphic></Button>
+      <ImageView fitHeight="150.0" fitWidth="600.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/genie2.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

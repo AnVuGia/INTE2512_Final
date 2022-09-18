@@ -1,0 +1,18 @@
+.loginPane {
+    -fx-background-color: #bd0d0d;
+    -fx-background-radius: 20;
+}
+
+.welcomeLabel {
+    -fx-font-family:  "Apple Chancery", cursive;
+    -fx-text-fill: white;
+    -fx-font-size: 25;
+}
+
+.lbl {
+    -fx-font-family: "Verdana";
+}
+
+.btn {
+    -fx-background-radius: 15;
+}

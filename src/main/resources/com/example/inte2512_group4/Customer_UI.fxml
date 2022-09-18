@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inte2512_group4.Controller.LogIn_Controller">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/coverNoID.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="600.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/genie2.png" />
+         </image></ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="480.0" layoutX="75.0" layoutY="169.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+      <Button contentDisplay="TOP" layoutX="100.0" layoutY="340.0" mnemonicParsing="false" onAction="#toCustomerShop" prefHeight="170.0" prefWidth="170.0" styleClass="btn" stylesheets="@Styling.css" text="Shop">
+         <graphic>
+            <ImageView fitHeight="145.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/271349011_467992534698181_7932706307274795011_n.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button contentDisplay="TOP" layoutX="330.0" layoutY="340.0" mnemonicParsing="false" onAction="#toCustomerProfile" prefHeight="170.0" prefWidth="170.0" styleClass="btn" stylesheets="@Styling.css" text="Profile">
+         <graphic>
+            <ImageView fitHeight="145.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/profile.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="80.0" layoutY="185.0" mnemonicParsing="false" onAction="#toCustomerLogin" prefHeight="15.0" prefWidth="15.0" styleClass="btn" stylesheets="@Styling.css">
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/homeicon.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+   </children>
+</AnchorPane>

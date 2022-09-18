@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inte2512_group4.Controller.LogIn_Controller">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/cover.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="100.0" layoutY="150.0" prefHeight="480.0" prefWidth="400.0" styleClass="loginPane" stylesheets="@Styling.css" />
+      <GridPane layoutX="180.0" layoutY="340.0" prefHeight="128.0" prefWidth="240.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="116.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="register" alignment="CENTER" mnemonicParsing="false" onAction="#toRegister" prefHeight="25.0" prefWidth="123.0" styleClass="btn" stylesheets="@Styling.css" text="Register" />
+                  <Button fx:id="login" mnemonicParsing="false" onAction="#toCustomer" prefHeight="25.0" prefWidth="124.0" styleClass="btn" stylesheets="@Styling.css" text="Login" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+            <TextField fx:id="username" prefHeight="35.0" prefWidth="231.0" promptText="Username" />
+            <PasswordField fx:id="customerPw" prefHeight="35.0" prefWidth="240.0" promptText="Password" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Label alignment="CENTER" layoutX="100.0" layoutY="200.0" prefHeight="70.0" prefWidth="400.0" styleClass="welcomeLabel" stylesheets="@Styling.css" text="Welcome to Genie's Video Store!">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="260.0" layoutY="470.0" mnemonicParsing="false" onAction="#toAdminLogin" styleClass="btn" stylesheets="@Styling.css" text="Admin Login" />
+      <Label fx:id="loginFail" layoutX="220.0" layoutY="291.0" text="Wrong username/password!" textFill="RED" visible="false" />
+   </children>
+</Pane>
