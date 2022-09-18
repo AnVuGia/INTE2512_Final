@@ -57,6 +57,7 @@ public class ItemController{
             loadRentTypeChoiceBox();
         }
         if(title != null){
+            loadStatusChoiceBox();
             setItemFieldDetails(selectedItem);
         }
     }
@@ -76,6 +77,7 @@ public class ItemController{
         status.getItems().addAll(list);
         status.setValue("True");
     }
+    //ALLOW ADMIN TO CHOOSE GENRE
     @FXML private void loadGenreChoiceBox(){
         String[] genre = {"None","Action", "Horror", "Drama", "Comedy"};
         list1.removeAll(list1);
@@ -83,6 +85,7 @@ public class ItemController{
         genreChoice.getItems().addAll(list1);
         genreChoice.setValue(genre[0]);
     }
+    //ALLOW ADMIN TO CHOOSE RENT TYPE
     @FXML private void loadRentTypeChoiceBox(){
         String[] rentType = {"Record", "DVD", "Game"};
         list2.removeAll(list2);
@@ -90,6 +93,7 @@ public class ItemController{
         rentTypeField.getItems().addAll(list2);
         rentTypeField.setValue(rentType[1]);
     }
+    //ALLOW ADMIN TO CHOOSE LOAN TYPE
     @FXML private void loadLoanType(){
         String[] loanType = {"2-day", "1-week"};
         list3.removeAll(list3);
@@ -109,7 +113,7 @@ public class ItemController{
             return I1.getItemTitle().compareTo(I2.getItemTitle());
         }
     };
-
+//GET THE INTERESTED ITEM'S ATTRIBUTES AND SHOW IT TO THE ADMIN
     private void setItemFieldDetails(Item foundItem){
         itemID.setText(foundItem.getItemID());
         title.setText(foundItem.getItemTitle());
@@ -121,6 +125,7 @@ public class ItemController{
         status.setValue(String.valueOf(foundItem.getStatus()));
 
     }
+    //ALLOW ADMIN TO DELETE ITEM
     @FXML private void onDelete(ActionEvent e) throws IOException {
         for(Customer cus: CustomerController.customers){
             cus.removeItem(selectedItem);
@@ -128,6 +133,7 @@ public class ItemController{
         items.remove(selectedItem);
         Router.toAdminUI(e);
     }
+    //ERROR HANDLER FOR ADDING ITEM
     @FXML private void addItemHandler(ActionEvent e) throws IOException {
         String title = titleField.getText();
         String rentType = rentTypeField.getValue();
@@ -145,7 +151,6 @@ public class ItemController{
         }if (!checkItemYear(yearField.getText())){
             errorPopup("Year can only contains number");
         }if (checkItemQuantity(quantityField.getText()) && checkItemFee(feeField.getText()) && checkItemYear(yearField.getText())) {
-            if(Integer.parseInt(quantityField.getText()) == 0){stat = false;};
             items.add(Item.createNewItem(ID, title, rentType, loanType, genre, Integer.parseInt(quantityField.getText()), Double.parseDouble(feeField.getText()),
                     stat));
             Router.toAdminItem(e);
@@ -153,7 +158,7 @@ public class ItemController{
     }
 
 
-
+//AUTO ID GENERATOR
     private String generateNewID(){
         String ID="";
         String lastID = items.get(items.size()-1).getItemID();
@@ -205,6 +210,7 @@ public class ItemController{
 
         }
     }*/
+    //UPDATE BUTTON HANDLER AND APPROPIATE ERROR HANDLING
     @FXML private void updateItemHandler(ActionEvent event) throws IOException {
         String title_value = title.getText();
         String rentType_value = rentTypeField.getValue();
@@ -221,24 +227,28 @@ public class ItemController{
             updateSuc.setVisible(true);
         }
     }
+    //SUPPORTING FUNCTION FOR TITLE SORTING (IN TERMS OF ASCENDING) IN ADMIN_ITEM CONTROLLER
     public static ArrayList<Item> titleAsc(){
         ArrayList<Item> temp = new ArrayList<>();
         temp = ItemController.items;
         Collections.sort(temp, Item.sortTitle);
         return temp;
     }
+    //SUPPORTING FUNCTION FOR TITLE SORTING (IN TERMS OF DESCENDING) IN ADMIN_ITEM CONTROLLER
     public static ArrayList<Item> titleDesc(){
         ArrayList<Item> temp = new ArrayList<>();
         temp = ItemController.items;
         Collections.sort(temp, Collections.reverseOrder(Item.sortTitle));
         return temp;
     }
+    //SUPPORTING FUNCTION FOR ID SORTING (IN TERMS OF DESCENDING) IN ADMIN_ITEM CONTROLLER
     public static ArrayList<Item> IdDesc(){
         ArrayList<Item> temp = new ArrayList<>();
         temp = ItemController.items;
         Collections.sort(temp, Collections.reverseOrder(Item.sortID));
         return temp;
     }
+    //SUPPORTING FUNCTION FOR ID SORTING (IN TERMS OF ASCENDING) IN ADMIN_ITEM CONTROLLER
     public static ArrayList<Item> IdAsc(){
         ArrayList<Item> temp = new ArrayList<>();
         temp = ItemController.items;
@@ -253,5 +263,3 @@ public class ItemController{
         }
     }
 }
-
-
