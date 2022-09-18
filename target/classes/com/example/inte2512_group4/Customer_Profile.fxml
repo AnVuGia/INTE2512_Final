@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inte2512_group4.Controller.CustomerProfileController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/coverNoID.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="480.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Label layoutX="42.0" layoutY="240.0" prefHeight="23.0" prefWidth="52.0" text="Name:" />
+      <Label layoutX="42.0" layoutY="307.0" prefHeight="23.0" prefWidth="52.0" text="Phone:" />
+      <Label layoutX="42.0" layoutY="274.0" prefHeight="23.0" prefWidth="52.0" text="Address:" />
+      <ScrollPane fx:id="rent_item_container" layoutX="45.0" layoutY="362.0" prefHeight="278.0" prefWidth="510.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+      <Label layoutX="323.0" layoutY="252.0" prefHeight="23.0" prefWidth="37.0" text="Type:" />
+      <Button layoutX="5.0" layoutY="185.0" mnemonicParsing="false" onAction="#onBack" prefHeight="15.0" prefWidth="15.0" styleClass="btn" stylesheets="@Styling.css">
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/homeicon.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label layoutX="323.0" layoutY="286.0" prefHeight="23.0" prefWidth="80.0" text="Return Made: " />
+      <Button layoutX="518.0" layoutY="330.0" mnemonicParsing="false" onAction="#toEditProfile" prefHeight="23.0" prefWidth="37.0" text="Edit" />
+      <Label fx:id="customer_name_label" layoutX="105.0" layoutY="240.0" prefHeight="23.0" prefWidth="174.0" />
+      <Label fx:id="customer_address_label" layoutX="105.0" layoutY="274.0" prefHeight="23.0" prefWidth="174.0" />
+      <Label fx:id="customer_phone_label" layoutX="105.0" layoutY="307.0" prefHeight="23.0" prefWidth="174.0" />
+      <Label fx:id="customer_type_label" layoutX="375.0" layoutY="252.0" prefHeight="23.0" prefWidth="37.0" />
+      <Label fx:id="number_of_return_label" layoutX="412.0" layoutY="286.0" prefHeight="23.0" prefWidth="17.0" />
+   </children>
+</AnchorPane>
