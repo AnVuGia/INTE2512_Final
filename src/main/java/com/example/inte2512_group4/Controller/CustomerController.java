@@ -151,7 +151,7 @@ public class CustomerController {
             item_container.setContent(tableView.createItemFromListContainer(item_list,"rent"));
         } else {
             //err handling
-            System.out.println("None");
+            item_container.setContent(new Label("No item match the search condition"));
         }
 
     }

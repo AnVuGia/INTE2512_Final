@@ -6,10 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -70,7 +67,7 @@ public class Admin_CustomerController {
             customer_container.setContent(tableView.createCustomerContainerFromList(cus_list));
         } else {
             //err handling
-            System.out.println("None");
+            customer_container.setContent(new Label("No customer match the search condition"));
         }
     }
     private ArrayList<Customer> sortCustomerType(String type){

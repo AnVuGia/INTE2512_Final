@@ -7,10 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -73,7 +70,7 @@ public class Admin_ItemController {
             item_container.setContent(tableView.createItemFromListContainer(item_list,"edit"));
         } else {
             //err handling
-            System.out.println("None");
+            item_container.setContent(new Label("No item match the search condition"));
         }
     }
     private ArrayList<Item> sortedItemAvailable(String status){
