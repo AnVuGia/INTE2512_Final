@@ -7,7 +7,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -42,6 +45,7 @@ public class Admin_ItemController {
     public VBox showTable(){
         return tableView.createItemFromListContainer(ItemController.items,"edit");
     }
+    //FIND ITEMS IN TERMS OF NAME OR ID
     public void findItemButtonHandler(ActionEvent e){
         String search_type = find_Item_ChoiceBox.getValue();
         String search_value = findItem_Field.getText().trim();
@@ -70,9 +74,10 @@ public class Admin_ItemController {
             item_container.setContent(tableView.createItemFromListContainer(item_list,"edit"));
         } else {
             //err handling
-            item_container.setContent(new Label("No item match the search condition"));
+            System.out.println("None");
         }
     }
+    //SORT ITEMS IN TERMS OF AVAILABILITY
     private ArrayList<Item> sortedItemAvailable(String status){
         ArrayList<Item> avail = new ArrayList<>();
         ArrayList<Item> not_avail = new ArrayList<>();
@@ -110,6 +115,7 @@ public class Admin_ItemController {
     }
     private String state_name = "Ascend";
     private String state_id =  "Ascend";
+    //SORT ITEMS IN TERMS OF NAME (ASCENDING AND DESCENDING)
     @FXML private void onNameSort(ActionEvent e){
         if (state_name.equals("Ascend")){
             item_container.setContent(tableView.createItemFromListContainer(ItemController.titleAsc(),"edit"));
@@ -128,6 +134,7 @@ public class Admin_ItemController {
         }
 
     }
+    //SORT ITEMS IN TERMS OF ID (ASCENDING AND DESCENDING)
     @FXML private void onIdSort(ActionEvent e){
         if (state_id.equals("Ascend")){
             item_container.setContent(tableView.createItemFromListContainer(ItemController.IdAsc(),"edit"));
@@ -141,3 +148,4 @@ public class Admin_ItemController {
         }
     }
 }
+
